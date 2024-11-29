@@ -26,7 +26,13 @@ public class Order {
     private Integer qty;
 
     @PostPersist
-    public void onPostPersist() {}
+    public void onPostPersist() {
+        // Get request from Order
+        //labshopcontracttest.external.Order order =
+        //    Application.applicationContext.getBean(labshopcontracttest.external.OrderService.class)
+        //    .getOrder(/** mapping value needed */);
+
+    }
 
     public static OrderRepository repository() {
         OrderRepository orderRepository = OrderApplication.applicationContext.getBean(
@@ -38,12 +44,6 @@ public class Order {
     //<<< Clean Arch / Port Method
     public void order(OrderCommand orderCommand) {
         //implement business logic here:
-
-        labshopcontracttest.external.GetInventoryQuery getInventoryQuery = new labshopcontracttest.external.GetInventoryQuery();
-        // getInventoryQuery.set??()
-        Inventory inventory = OrderApplication.applicationContext
-            .getBean(labshopcontracttest.external.InventoryService.class)
-            .getInventory(getInventoryQuery);
 
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();

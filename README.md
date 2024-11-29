@@ -1,7 +1,7 @@
 # 
 
 ## Model
-www.msaez.io/#/courses/cna-full/25a51e80-640f-11ef-b6b7-6ff918412057/contract-test-2022/primeblue@korea.ac.kr
+www.msaez.io/#/courses/cna-full/25a51e80-640f-11ef-b6b7-6ff918412057/contract-test-2022
 
 ## Before Running Services
 ### Make sure there is a Kafka server running

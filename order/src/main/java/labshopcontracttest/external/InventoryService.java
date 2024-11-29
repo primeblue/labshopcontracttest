@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "inventory", url = "${api.url.inventory}")
 public interface InventoryService {
-    @GetMapping(path = "/inventories/getInventory")
-    public Inventory getInventory(GetInventoryQuery getInventoryQuery);
+    @GetMapping(path = "/inventories/{id}")
+    public Inventory getInventory(@PathVariable("id") Long id);
 }

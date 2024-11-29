@@ -18,7 +18,11 @@ public interface InventoryRepository
     @Query(
         value = "select inventory " +
         "from Inventory inventory " +
-        "where(:id is null or inventory.id = :id) and (:stock is null or inventory.stock = :stock)"
+        "where(:id is null or inventory.id like %:id%) and (:stock is null or inventory.stock like %:stock%)"
     )
-    Inventory GetInventory(Long id, Integer stock);
+    List<Inventory> findByGetInventory(
+        Long id,
+        Integer stock,
+        Pageable pageable
+    );
 }
